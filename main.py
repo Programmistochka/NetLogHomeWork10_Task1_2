@@ -1,4 +1,4 @@
-with open('datafile.txt', 'rt') as file:
+with open('datafile.txt', 'rt', encoding='utf-8') as file:
     cook_book = {}
     dishes = []
     for line in file:
@@ -35,7 +35,6 @@ def get_shop_list_by_dishes(dishes, person_count):
                     for ingr_in_dict, compose in ingr_dict.items():
                         if ingr_in_dict == ingridient:
                             compose['quantity'] += ingr_quantity
-                            print('Новое знач', compose)
                             break
         else:
             print(f'Рецепта для блюда - {dish} - нет в кулинарной книге')
